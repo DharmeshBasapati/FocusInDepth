@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="15dp">
+
+    <ImageView
+        android:id="@+id/ivNewsImage"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/sample_kohli"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tvNewsTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ivNewsImage"
+        tools:text="KKR knock RCB out in Kohli's last match as RCB captain, to face DC for place in final" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tvNewsContent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvNewsTitle"
+        app:lineHeight="25dp"
+        tools:text="Kolkata Knight Riders (KKR) defeated Royal Challengers Bangalore (RCB) by four wickets in IPL 2021 Eliminator. The match was Virat Kohli's last as the captain of RCB. KKR will now face Delhi Capitals (DC) in the Qualifier 2 on Wednesday. The winner of the Qualifier 2 will face three-time champions Chennai Super Kings (CSK) in the final on Friday." />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

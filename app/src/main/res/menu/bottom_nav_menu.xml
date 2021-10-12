@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/categories_graph"
+        android:title="@string/label_categories"
+        android:icon="@drawable/ic_news_categories"/>
+
+    <item android:id="@+id/read_later_graph"
+        android:title="@string/label_read_later"
+        android:icon="@drawable/ic_read_later"/>
+
+</menu>

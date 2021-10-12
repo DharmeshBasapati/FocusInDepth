@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#2e7d32</color>
+    <color name="colorPrimaryVariant">#005005</color>
+    <color name="colorOnPrimary">#ffffff</color>
+
+    <color name="colorSecondary">#f57c00</color>
+    <color name="colorSecondaryVariant">#bb4d00</color>
+    <color name="colorOnSecondary">#121212</color>
+
+    <color name="colorBackground">#121212</color>
+    <color name="colorOnBackground">#FFFFFF</color>
+
+    <color name="colorSurface">#FAFAFA</color>
+    <color name="colorOnSurface">#121212</color>
+
+    <color name="textColorPrimary">#121212</color>
+
+    <color name="colorError">#FF0000</color>
+
+    <color name="black">#121212</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="black_overlay">#66000000</color>
+
+    <color name="custom_round_border_color">#FFFFFFFF</color>
+
+    <color name="bottom_nav_unselected_color">#66000000</color>
+    <color name="bottom_nav_selected_color">#bb4d00</color>
+
+</resources>
