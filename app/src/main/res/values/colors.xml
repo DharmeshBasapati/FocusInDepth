@@ -24,6 +24,8 @@
 
     <color name="custom_round_border_color">#66000000</color>
 
-    <color name="bottom_nav_unselected_color">#66000000</color>
-    <color name="bottom_nav_selected_color">#bb4d00</color>
+    <color name="bottom_nav_background">@color/colorPrimary</color>
+
+    <color name="bottom_nav_unselected_color">#88FFFFFF</color>
+    <color name="bottom_nav_selected_color">#FFFFFF</color>
 </resources>

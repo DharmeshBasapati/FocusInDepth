@@ -6,16 +6,17 @@
     android:layout_height="wrap_content"
     android:layout_margin="10dp"
     android:background="@drawable/custom_rounded_rect"
-    android:padding="10dp">
+    android:paddingVertical="25dp">
 
     <ImageView
         android:id="@+id/ivCategory"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
-        android:src="@drawable/ic_news_categories"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:src="@drawable/ic_national"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/textColorPrimary" />
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/tvCategoryName"
@@ -23,7 +24,9 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:gravity="center"
+        android:textColor="@color/textColorPrimary"
         android:textSize="18sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

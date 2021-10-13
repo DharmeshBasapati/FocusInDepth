@@ -50,7 +50,6 @@ class NewsCategoriesFragment : Fragment() {
     }
 
     private fun navigateToNewsList(categoryName: String) {
-
         val action =
             NewsCategoriesFragmentDirections.actionNewsCategoriesFragmentToNewsFragment(categoryName)
         findNavController().navigate(action)

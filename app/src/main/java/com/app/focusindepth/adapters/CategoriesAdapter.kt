@@ -24,6 +24,7 @@ class CategoriesAdapter(
             with(categoriesList[position]) {
                 binding.apply {
 
+                    ivCategory.setImageResource(categoryImage)
                     tvCategoryName.text = categoryName
                     itemView.setOnClickListener {
                         onItemClick(categoryName.lowercase())

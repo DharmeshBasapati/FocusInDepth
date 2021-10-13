@@ -1,11 +1,9 @@
 package com.app.focusindepth.views.categories
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
@@ -22,12 +20,10 @@ import com.app.focusindepth.viewmodels.NewsViewModel
 
 class NewsFragment : Fragment() {
 
-    private lateinit var newsAdapter: NewsAdapter
+    private var newsAdapter: NewsAdapter? = null
     private lateinit var binding: FragmentNewsBinding
     private lateinit var newsViewModel: NewsViewModel
     private val args: NewsFragmentArgs by navArgs()
-
-    private val TAG = "NewsFragment"
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -35,16 +31,14 @@ class NewsFragment : Fragment() {
     ): View {
         binding = FragmentNewsBinding.inflate(layoutInflater)
 
-        Log.d(TAG, "onCreateView: ${args.categoryName}")
-
         (requireActivity() as MainActivity).supportActionBar?.title =
             args.categoryName.replaceFirstChar {
                 if (it.isLowerCase()) it.uppercase() else it.toString()
             }
 
-        setupNewsList()
         setupViewModel()
         setupObserver()
+        setupNewsList()
 
         return binding.root
     }
@@ -87,21 +81,17 @@ class NewsFragment : Fragment() {
                 Status.SUCCESS -> {
                     binding.progressBar.visibility = View.GONE
                     binding.rvNews.visibility = View.VISIBLE
-                    it.data?.let { it1 -> newsAdapter.addData(it1) }
+                    it.data?.let { it1 -> newsAdapter?.addData(it1) }
                 }
                 Status.ERROR -> {
                     binding.progressBar.visibility = View.GONE
                     binding.rvNews.visibility = View.GONE
-                    Toast.makeText(requireContext(), "No News Here...", Toast.LENGTH_SHORT).show()
                 }
                 Status.LOADING -> {
                     binding.progressBar.visibility = View.VISIBLE
                     binding.rvNews.visibility = View.GONE
                 }
             }
-
-            Log.d(TAG, "setupObserver: $it")
-
 
         })
 

@@ -1,8 +1,10 @@
 package com.app.focusindepth.repository
 
 import androidx.lifecycle.MutableLiveData
+import com.app.focusindepth.models.News
 import com.app.focusindepth.models.NewsResponse
 import com.app.focusindepth.room.entity.Category
+import com.app.focusindepth.utils.Resource
 
 interface FocusRepository {
 
@@ -10,6 +12,6 @@ interface FocusRepository {
 
     suspend fun getAllCategories(): List<Category>
 
-    suspend fun getNewsFromCategory(categoryName: String): MutableLiveData<NewsResponse>
+    fun getNewsFromCategory(categoryName: String): MutableLiveData<Resource<List<News>>>
 
 }

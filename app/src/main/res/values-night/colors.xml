@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#2e7d32</color>
-    <color name="colorPrimaryVariant">#005005</color>
+    <color name="colorPrimary">#070707</color>
+    <color name="colorPrimaryVariant">#090808</color>
     <color name="colorOnPrimary">#ffffff</color>
 
     <color name="colorSecondary">#f57c00</color>
@@ -11,10 +11,10 @@
     <color name="colorBackground">#121212</color>
     <color name="colorOnBackground">#FFFFFF</color>
 
-    <color name="colorSurface">#FAFAFA</color>
-    <color name="colorOnSurface">#121212</color>
+    <color name="colorSurface">#313235</color>
+    <color name="colorOnSurface">#FAFAFA</color>
 
-    <color name="textColorPrimary">#121212</color>
+    <color name="textColorPrimary">#FAFAFA</color>
 
     <color name="colorError">#FF0000</color>
 
@@ -24,7 +24,9 @@
 
     <color name="custom_round_border_color">#FFFFFFFF</color>
 
-    <color name="bottom_nav_unselected_color">#66000000</color>
-    <color name="bottom_nav_selected_color">#bb4d00</color>
+    <color name="bottom_nav_background">#070707</color>
+
+    <color name="bottom_nav_unselected_color">#55FFFFFF</color>
+    <color name="bottom_nav_selected_color">#2e7d32</color>
 
 </resources>
