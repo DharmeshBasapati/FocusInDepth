@@ -2,17 +2,18 @@ package com.app.focusindepth.adapters
 
 import android.content.Intent
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.app.focusindepth.R
 import com.app.focusindepth.databinding.RowItemNewsBinding
-import com.app.focusindepth.models.News
+import com.app.focusindepth.room.entity.News
 import com.bumptech.glide.Glide
 
-class NewsAdapter(
+class ReadLaterAdapter(
     private var newsList: List<News>, val onNewsClick: (News) -> Any
 ) :
-    RecyclerView.Adapter<NewsAdapter.ViewHolder>() {
+    RecyclerView.Adapter<ReadLaterAdapter.ViewHolder>() {
 
     inner class ViewHolder(val binding: RowItemNewsBinding) :
         RecyclerView.ViewHolder(binding.root)
@@ -36,9 +37,7 @@ class NewsAdapter(
                         date
                     )
 
-                    btnReadLater.setOnClickListener {
-
-                    }
+                    btnReadLater.visibility = View.GONE
 
                     btnShareNews.setOnClickListener {
 
@@ -74,5 +73,5 @@ class NewsAdapter(
         notifyDataSetChanged()
     }
 
-    fun getNewsList(): List<News> = newsList
+    fun getList(): List<News> = newsList
 }

@@ -1,14 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".views.readlater.ReadLaterFragment">
+    tools:context=".views.categories.NewsFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvReadLater"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/label_read_later" />
+        android:layout_margin="10dp"
+        android:visibility="gone"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:listitem="@layout/row_item_news" />
 
-</FrameLayout>
+    <ImageView
+        android:id="@+id/ivEmpty"
+        android:layout_width="80dp"
+        android:layout_height="90dp"
+        android:layout_marginBottom="15dp"
+        android:src="@drawable/ic_empty"
+        app:layout_constraintBottom_toTopOf="@id/tvNoItemFound"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:tint="@color/colorStint" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tvNoItemFound"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Oops! No News Found."
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
+        android:textColor="@color/colorStint"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

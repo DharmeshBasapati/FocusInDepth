@@ -18,6 +18,9 @@
 
     <color name="colorError">#FF0000</color>
 
+    <color name="colorStint">#005005</color>
+    <color name="colorContent">#555555</color>
+
     <color name="black">#121212</color>
     <color name="white">#FFFFFFFF</color>
     <color name="black_overlay">#66000000</color>
@@ -28,4 +31,5 @@
 
     <color name="bottom_nav_unselected_color">#88FFFFFF</color>
     <color name="bottom_nav_selected_color">#FFFFFF</color>
+    <color name="colorContentRow">#585858</color>
 </resources>

@@ -133,6 +133,29 @@ object FocusRepositoryImpl : FocusRepository {
         return newsResponse
     }
 
+    override suspend fun addNewsToReadLater(news: News) {
+        focusDao.addNewsToReadLater(
+            com.app.focusindepth.room.entity.News(
+                author = news.author,
+                content = news.content,
+                date = news.date,
+                imageUrl = news.imageUrl,
+                readMoreUrl = news.readMoreUrl!!,
+                time = news.time,
+                title = news.title,
+                url = news.url
+            )
+        )
+    }
+
+    override suspend fun getAllReadLaterNews(): List<com.app.focusindepth.room.entity.News> {
+        return focusDao.getAllReadLaterNews()
+    }
+
+    override suspend fun removeNewsFromReadLater(news: com.app.focusindepth.room.entity.News) {
+        focusDao.deleteNewsFromReadLater(news)
+    }
+
     fun getNewsResponse(): LiveData<Resource<List<News>>> = newsResponse
 
 }

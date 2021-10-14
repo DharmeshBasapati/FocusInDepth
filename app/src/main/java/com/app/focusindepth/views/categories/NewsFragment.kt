@@ -4,11 +4,14 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
+import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.app.focusindepth.MainActivity
 import com.app.focusindepth.adapters.NewsAdapter
 import com.app.focusindepth.databinding.FragmentNewsBinding
@@ -35,6 +38,32 @@ class NewsFragment : Fragment() {
             args.categoryName.replaceFirstChar {
                 if (it.isLowerCase()) it.uppercase() else it.toString()
             }
+
+        val myCallback = object : ItemTouchHelper.SimpleCallback(
+            0,
+            ItemTouchHelper.RIGHT
+        ) {
+            override fun onMove(
+                recyclerView: RecyclerView,
+                viewHolder: RecyclerView.ViewHolder,
+                target: RecyclerView.ViewHolder
+            ): Boolean = false
+
+            override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
+                newsViewModel.addNewsToReadLater(newsAdapter!!.getNewsList()[viewHolder.adapterPosition])
+                newsAdapter?.notifyItemRemoved(viewHolder.adapterPosition)
+                Toast.makeText(requireContext(), "Added to Read Later.", Toast.LENGTH_SHORT).show()
+            }
+
+
+        }
+
+        val myHelper = ItemTouchHelper(myCallback)
+        myHelper.attachToRecyclerView(binding.rvNews)
+
+        binding.swipeRefreshLayout.setOnRefreshListener {
+            newsViewModel.fetchNewsForSelectedCategory(args.categoryName)
+        }
 
         setupViewModel()
         setupObserver()
@@ -79,11 +108,13 @@ class NewsFragment : Fragment() {
             when (it.status) {
 
                 Status.SUCCESS -> {
+                    binding.swipeRefreshLayout.isRefreshing = false
                     binding.progressBar.visibility = View.GONE
                     binding.rvNews.visibility = View.VISIBLE
                     it.data?.let { it1 -> newsAdapter?.addData(it1) }
                 }
                 Status.ERROR -> {
+                    binding.swipeRefreshLayout.isRefreshing = false
                     binding.progressBar.visibility = View.GONE
                     binding.rvNews.visibility = View.GONE
                 }

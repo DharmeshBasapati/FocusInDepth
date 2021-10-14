@@ -4,14 +4,9 @@ import androidx.room.Entity
 import androidx.room.ForeignKey
 import androidx.room.PrimaryKey
 
-@Entity(tableName = "news", foreignKeys = [ForeignKey(
-    entity = Category::class,
-    parentColumns = arrayOf("categoryId"),
-    childColumns = arrayOf("categoryId")
-)])
+@Entity(tableName = "news")
 data class News(
     @PrimaryKey(autoGenerate = true) val newsId: Int = 0,
-    val categoryId: Int,
     val author: String,
     val content: String,
     val date: String,
@@ -19,6 +14,5 @@ data class News(
     val readMoreUrl: String,
     val time: String,
     val title: String,
-    val url: String,
-    val isReadLater: Boolean
+    val url: String
 )

@@ -13,7 +13,7 @@ class ViewModelFactory(private val focusDao: FocusDao) : ViewModelProvider.Facto
             return NewsCategoriesViewModel(focusDao) as T
         }
         if(modelClass.isAssignableFrom(ReadLaterViewModel::class.java)){
-            return ReadLaterViewModel() as T
+            return ReadLaterViewModel(focusDao) as T
         }
         if(modelClass.isAssignableFrom(NewsViewModel::class.java)){
             return NewsViewModel(focusDao) as T

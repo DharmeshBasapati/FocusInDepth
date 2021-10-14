@@ -2,4 +2,5 @@
 <resources>
     <string name="label_categories">Categories</string>
     <string name="label_read_later">Read Later</string>
+    <string name="label_author_and_time">short by %1$s / %2$s on %3$s</string>
 </resources>

@@ -8,16 +8,18 @@
     <color name="colorSecondaryVariant">#bb4d00</color>
     <color name="colorOnSecondary">#121212</color>
 
-    <color name="colorBackground">#121212</color>
+    <color name="colorBackground">#151515</color>
     <color name="colorOnBackground">#FFFFFF</color>
 
-    <color name="colorSurface">#313235</color>
+    <color name="colorSurface">#121212</color>
     <color name="colorOnSurface">#FAFAFA</color>
 
     <color name="textColorPrimary">#FAFAFA</color>
 
     <color name="colorError">#FF0000</color>
+    <color name="colorContent">#999999</color>
 
+    <color name="colorStint">#88FFFFFF</color>
     <color name="black">#121212</color>
     <color name="white">#FFFFFFFF</color>
     <color name="black_overlay">#66000000</color>
@@ -28,5 +30,6 @@
 
     <color name="bottom_nav_unselected_color">#55FFFFFF</color>
     <color name="bottom_nav_selected_color">#2e7d32</color>
+    <color name="colorContentRow">#B8B8B8</color>
 
 </resources>
